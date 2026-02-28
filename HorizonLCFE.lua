@@ -1,4 +1,4 @@
---you cant stop the script and im not fixing it also i think the velocity is fucked thats why it keeps moving while idle
+--you cant stop the script and im not fixing it also i think the velocity is fucked thats why it keeps moving while idle credits to melonscripter for converting to fe
 local Global = (getgenv and getgenv()) or shared
 if game:GetService("Players").LocalPlayer.Character.Name ~= "GelatekReanimate" then
 	error("Not Reanimated")
