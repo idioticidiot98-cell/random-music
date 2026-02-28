@@ -547,4 +547,3 @@ ResetEvent = Character:GetPropertyChangedSignal("Parent"):Connect(function(Paren
 end)
 
 Warn("Reanimated in " .. string.sub(tostring(tick()-Speed),1,string.find(tostring(tick()-Speed),".")+5))
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Gelatekussy/GelatekReanimate/main/Addons/Animations.lua"))()
