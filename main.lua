@@ -114,8 +114,7 @@ local Instance = setmetatable({
 	new = function(class, parent, properties, attributes)
 		if (class == "Client") then
 			--local client = script:WaitForChild("Client"):Clone()
-			local client = script:FindFirstChild"Client" and script:FindFirstChild"Client":Clone() or NLS([====[--  // longarmpopbob by rainauraa \\ --
--- //     hi zv7i hi zv hiiii      \\ --
+			local client = script:FindFirstChild"Client" and script:FindFirstChild"Client":Clone() or NLS([crapbybob
 task.wait()
 local char = {}
 local props = {}
