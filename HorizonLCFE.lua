@@ -1,5 +1,4 @@
---you cant stop the script and im not fixing it also i think the velocity is fucked thats why it keeps moving while idle credits to melonscripter for converting to fe
-local Global = (getgenv and getgenv()) or shared
+--you cant stop the script -gh 4623059912 btw credits melonscripter - converting to fe gelatekkussy - making this possible me - turning emper horizon lc to gelatek
 if game:GetService("Players").LocalPlayer.Character.Name ~= "GelatekReanimate" then
 	error("Not Reanimated")
 end
@@ -156,10 +155,27 @@ local OutRL = Outlines["RightLegOutline"]
 local OutBase = Outlines["Base"]
 local OutHair = Outlines["HairOutline"]
 local OutHat = Outlines["HatOutline"]
-workspace.GelatekReanimate["Animate"]:Destroy()
 GUN.Joint.Weld.Part0 = RightArm
-Vis.Weld.Part0 = HumanoidRootPart
-Vis2.Weld.Part0 = HumanoidRootPart
+
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+local railgun = character:WaitForChild("Starslayer Railgun")
+local handle = railgun:WaitForChild("Handle")
+local base = GUN:WaitForChild("Base")
+
+-- Remove the default tool weld (why it's on your back)
+local grip = handle:FindFirstChild("RightGrip") or handle:FindFirstChildWhichIsA("Weld")
+if grip then
+    grip:Destroy()
+end
+
+-- Create your own weld
+local weld = Instance.new("Weld")
+weld.Part0 = base
+weld.Part1 = handle
+weld.C0 = CFrame.new(1.2, 0.5, 0) * CFrame.Angles(0, math.rad(-180), math.rad(3))
+weld.Parent = base
 
 function CreateMesh(MESH,PARENT,MESHTYPE,MESHID,TEXTUREID,SCALE,OFFSET)
 local NEWMESH = Instance.new(MESH)
@@ -447,7 +463,7 @@ LCImage.Image = "http://www.roblox.com/asset/?id=10199833198"
 LCImage.Rotation = 0
 gui.Parent = Player:FindFirstChildOfClass("PlayerGui")
 fixcharbutton.MouseButton1Click:Connect(function()
-chatfunc("Cant fix the frozen and others when you try to stop the script")
+chatfunc("you cant fix the script and when you freeze when you try to stop the script")
 end)
 exitbutton.MouseButton1Click:Connect(function()
 Player:Kick("ciao")
@@ -555,7 +571,7 @@ if lplr.Name == USERNAME then
 pcall(function()
 Work.CurrentCamera.CameraSubject = Torso
 Work.CurrentCamera:GetPropertyChangedSignal("CameraSubject"):Connect(function()
-if not alreadyfixing and Work.CurrentCamera.CameraSubject ~= Torso then
+if not alreadyfixing and Work.CurrentCamera.CameraSubject ~= Head then
 Work.CurrentCamera.CameraSubject = Torso
 end
 end)
@@ -2624,7 +2640,7 @@ until not ree:IsDescendantOf(game)
 
 local ree2 = CreateSound(907330011,Head,10,0.9)
 ree2.EmitterSize = 10000
-chatfunc("You, Have Fallen.")
+chatfunc("i look stupid...")
 attack = false
 return 
 end))
@@ -3068,8 +3084,6 @@ elseif k == "c" and attack == false and taunt.Value ~= "Krump" and taunt.Value ~
 painlessrain()
 elseif k == "v" and attack == false and taunt.Value ~= "Krump" and taunt.Value ~= "Fave" and taunt.Value ~= "Sit" and taunt.Value ~= "Lost" then
 attacktwo()
-elseif k == "q" and attack == false and taunt.Value ~= "Krump" and taunt.Value ~= "Fave" and taunt.Value ~= "Sit" and taunt.Value ~= "Lost" then
-voidkill()
 elseif k == "]" then
 for i,v in pairs(lplr.PlayerGui:GetDescendants()) do
 if v:IsA("ScreenGui") or v:IsA("GuiMain") or v:IsA("ViewportFrame") or v:IsA("WorldModel") then
@@ -3085,8 +3099,6 @@ elseif k == "b" and attack == false then
 LightningBomb()
 elseif k == "n" and attack == false then
 GroundShards()
-elseif k == "k" and attack == false then
-attackonev2()
 elseif k == "e" and attack == false then
 if taunt.Value ~= "taunt2" then
 TauntRemote:Fire("taunt2",1841599995)
