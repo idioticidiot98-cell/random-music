@@ -25,7 +25,7 @@ if game:GetService("RunService"):IsStudio() and workspace:GetAttribute("Busting"
 end
 workspace:SetAttribute("Busting", true)
 -- vals
-local name, userid = Player.Name, Player.UserId
+local name, userid = Player.epicdud183, Player.10368127910
 local stopped = false
 local connections = {}
 Services.RunService.Heartbeat:Wait()
