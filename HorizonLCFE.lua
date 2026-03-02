@@ -1,4 +1,5 @@
---you cant stop the script -gh 4623059912 btw credits melonscripter - converting to fe gelatekkussy - making this possible me - turning emper horizon lc to gelatek
+--you cant stop the script -gh 4623059912 btw credits melonscripter - converting to fe gelatekkussy - making this possible me - turning emper horizon lc to gelatek 
+local Global = (getgenv and getgenv()) or shared
 if game:GetService("Players").LocalPlayer.Character.Name ~= "GelatekReanimate" then
 	error("Not Reanimated")
 end
