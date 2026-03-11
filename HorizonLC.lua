@@ -1,4 +1,4 @@
---credits melonscripter - converting to fe gelatekkussy - making this possible me - turning emper horizon lc to gelatek 
+--All credits go to melonscripter for the fe convert btw press q to toggle look at camera and k to toggle torso view or humanoid
 local Global = (getgenv and getgenv()) or shared
 if game:GetService("Players").LocalPlayer.Character.Name ~= "GelatekReanimate" then
 	error("Not Reanimated")
@@ -11,6 +11,89 @@ local Events = Global.TableOfEvents
 Global.GetLoadLibrary()
 Global.AntiScript()
 
+local player = game.Players.LocalPlayer
+local cam = workspace.CurrentCamera
+local RunService = game:GetService("RunService")
+local UIS = game:GetService("UserInputService")
+
+local char = player.Character
+local torso = char:FindFirstChild("UpperTorso") or char:FindFirstChild("Torso")
+local neck = torso:WaitForChild("Neck")
+
+local LookAtCamera = false 
+
+local function Clerp(a,b,t)
+	return a:Lerp(b,t)
+end
+
+
+UIS.InputBegan:Connect(function(input,gp)
+	if gp then return end
+	
+	if input.KeyCode == Enum.KeyCode.Q then
+		LookAtCamera = not LookAtCamera
+	end
+end)
+
+RunService.RenderStepped:Connect(function()
+
+	if not LookAtCamera then
+		return
+	end
+
+	local CamDir = torso.CFrame:ToObjectSpace(cam.CFrame).LookVector
+
+	neck.C1 = Clerp(
+		neck.C1,
+		CFrame.new(0,-.5,0)
+		* CFrame.Angles(math.rad(-90),0,math.rad(180))
+		* CFrame.Angles(0,0,math.asin(CamDir.x))
+		* CFrame.Angles(math.asin(CamDir.y),0,0),
+		0.25
+	)
+
+end)
+local player = game.Players.LocalPlayer
+local char = player.Character
+
+local camera = workspace.CurrentCamera
+local torso = char:FindFirstChild("UpperTorso") or char:FindFirstChild("Torso")
+local humanoid = char:WaitForChild("Humanoid")
+
+local UIS = game:GetService("UserInputService")
+
+local enabled = false
+local alreadyfixing = false
+
+-- toggle key
+UIS.InputBegan:Connect(function(input,gp)
+	if gp then return end
+	
+	if input.KeyCode == Enum.KeyCode.K then
+		enabled = not enabled
+		
+		if enabled then
+			camera.CameraSubject = torso
+		else
+			camera.CameraSubject = humanoid
+		end
+	end
+end)
+
+-- keep camera locked when enabled
+camera:GetPropertyChangedSignal("CameraSubject"):Connect(function()
+
+	if not enabled then return end
+	if alreadyfixing then return end
+
+	if camera.CameraSubject ~= torso then
+		alreadyfixing = true
+		camera.CameraSubject = torso
+		task.wait()
+		alreadyfixing = false
+	end
+
+end)
 local script = game:GetObjects("rbxassetid://14964632694")[1]
 local USERNAME,lplr = game:GetService("Players").LocalPlayer.Name,game:GetService("Players").LocalPlayer
 local Player = game:GetService("Players"):FindFirstChild(USERNAME)
@@ -141,7 +224,6 @@ local Vis2 = CloneStuff["Visualizer2"] Vis2.Color = Color3.new()
 local Gunneon = GUN.NeonParts
 local GunJoint = GUN.Joint.Weld
 local GunBase = GUN.Base
-local GunAdds = GUN.Baseplate
 local Hole = GUN.Hole
 local Holetwo = GUN.Hole2
 local outerm = Vis.Mesh
@@ -157,9 +239,11 @@ local OutBase = Outlines["Base"]
 local OutHair = Outlines["HairOutline"]
 local OutHat = Outlines["HatOutline"]
 GUN.Joint.Weld.Part0 = RightArm
+Vis.Weld.Part0 = HumanoidRootPart
+Vis2.Weld.Part0 = HumanoidRootPart
 
 local player = game.Players.LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
+local character = player.Character
 
 local railgun = character:WaitForChild("Starslayer Railgun")
 local handle = railgun:WaitForChild("Handle")
@@ -464,7 +548,7 @@ LCImage.Image = "http://www.roblox.com/asset/?id=10199833198"
 LCImage.Rotation = 0
 gui.Parent = Player:FindFirstChildOfClass("PlayerGui")
 fixcharbutton.MouseButton1Click:Connect(function()
-chatfunc("you cant fix the script and when you freeze when you try to stop the script")
+chatfunc("You Cant Fix the script Just Rejoin")
 end)
 exitbutton.MouseButton1Click:Connect(function()
 Player:Kick("ciao")
@@ -570,10 +654,10 @@ end
 
 if lplr.Name == USERNAME then
 pcall(function()
-Work.CurrentCamera.CameraSubject = Torso
+Work.CurrentCamera.CameraSubject = HumanoidRootPart
 Work.CurrentCamera:GetPropertyChangedSignal("CameraSubject"):Connect(function()
 if not alreadyfixing and Work.CurrentCamera.CameraSubject ~= Head then
-Work.CurrentCamera.CameraSubject = Torso
+Work.CurrentCamera.CameraSubject = HumanoidRootPart
 end
 end)
 end)
@@ -2428,9 +2512,9 @@ function destroycannons()
 coroutine.resume(coroutine.create(function()
 attack = true
 walkspeed = 0
-local ree = CreateSound(3663144448,Head,10,1,false)
+local ree = CreateSound(125057677032903,Head,10,1,false)
 ree.EmitterSize = 10000
-chatfunc("Die!")
+chatfunc("Does Nothing")
 
 delay(2.5,function()
 local services = {}
@@ -2639,7 +2723,7 @@ GunJoint.C0 = Clerp(GunJoint.C0,CFrame.new(.05,-1,-.15) * CFrame.Angles(math.rad
 task.wait()
 until not ree:IsDescendantOf(game)
 
-local ree2 = CreateSound(907330011,Head,10,0.9)
+local ree2 = CreateSound(1,Head,10,0.9)
 ree2.EmitterSize = 10000
 chatfunc("i look stupid...")
 attack = false
@@ -3155,7 +3239,7 @@ TauntRemote:Fire("Lost",9046526805)
 elseif k == "2" and attack == false and nomain == false and taunt.Value ~= "GOD" then
 TauntRemote:Fire("GOD",9039290292)
 elseif k == "3" and attack == false and nomain == false and taunt.Value ~= "Superior" then
-TauntRemote:Fire("Superior",1841374480)
+TauntRemote:Fire("Superior",97296738811384)
 elseif k == "4" and taunt.Value ~= "KickGod" then
 TauntRemote:Fire("KickGod",9041936082)
 elseif k == "5" and taunt.Value ~= "iNSaNiTY" and nomain == false then
@@ -3179,13 +3263,13 @@ TauntRemote:Fire("iNSaNiTY",1836812625)
 elseif k == "6" and nomain == false and taunt.Value ~= "Err0r" then
 TauntRemote:Fire("Err0r",1840963650)
 elseif k == "m" and nomain == false and taunt.Value == "Err0r" and taunt.Value ~= "Toxic" then
-TauntRemote:Fire("Toxic",1840985823)
+TauntRemote:Fire("Toxic",1846668647)
 elseif k == "7" and nomain == false and taunt.Value ~= "Glitch" then
 TauntRemote:Fire("Glitch",1837087520)
 elseif k == "8" and nomain == false and taunt.Value ~= "Fallen" then
 TauntRemote:Fire("Fallen",9047679043)
 elseif k == "9" and nomain == false and taunt.Value ~= "Berger" then
-TauntRemote:Fire("Berger",9045948785)
+TauntRemote:Fire("Berger",1841305698)
 elseif k == "0" and nomain == false and taunt.Value ~= "KingMan" then
 TauntRemote:Fire("KingMan",9040303465)
 elseif k == "u" and nomain == false then
@@ -3206,7 +3290,7 @@ walkspeed = 10
 end
 elseif k == "y" and nomain == false then
 if taunt.Value ~= "Krump" then
-TauntRemote:Fire("Krump",9048324220)
+TauntRemote:Fire("Krump",138618004586765)
 walkspeed = 16
 else
 TauntRemote:Fire("None",1841425036)
@@ -3364,7 +3448,7 @@ end
 --______________________________________________--
 --______________________________________________--		
 if lplr.Name == USERNAME then
-chatfunc("Check Console for Keys(Only you see can see this msg)")
+chatfunc("Permadeath Moment:")
 warn("Keys: Z - Dash, X - ChargeBeam, C - PainlessRain, V - Expulsion, B - Lightning Bomb, N - Shards, K & Q - Masstable Void, J - Shield(No AoE), [ - Fix, R - Go to Pos, G - KillToggle, F - Fly, ] - Anti Thing, L - Fix Lighting, , - Roar, = - Day/Night Toggle, - is Unvoid, 1-10 Main Modes, 1>M - Mode, 6>M - Mode, E - Mode, H - Mode, U,T & Y - Taunts")
 end
 while not stopeverything do
