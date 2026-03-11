@@ -1,4 +1,4 @@
---All credits go to melonscripter for the fe convert btw press q to toggle look at camera and k to toggle torso view or humanoid also press f9 to look at the controls
+--All credits go to melonscripter for the fe convert btw press q to toggle look at camera and k to toggle torso view or humanoid
 local Global = (getgenv and getgenv()) or shared
 if game:GetService("Players").LocalPlayer.Character.Name ~= "GelatekReanimate" then
 	error("Not Reanimated")
@@ -65,7 +65,7 @@ local UIS = game:GetService("UserInputService")
 local enabled = false
 local alreadyfixing = false
 
--- toggle key
+
 UIS.InputBegan:Connect(function(input,gp)
 	if gp then return end
 	
@@ -80,7 +80,7 @@ UIS.InputBegan:Connect(function(input,gp)
 	end
 end)
 
--- keep camera locked when enabled
+
 camera:GetPropertyChangedSignal("CameraSubject"):Connect(function()
 
 	if not enabled then return end
@@ -3169,6 +3169,8 @@ elseif k == "c" and attack == false and taunt.Value ~= "Krump" and taunt.Value ~
 painlessrain()
 elseif k == "v" and attack == false and taunt.Value ~= "Krump" and taunt.Value ~= "Fave" and taunt.Value ~= "Sit" and taunt.Value ~= "Lost" then
 attacktwo()
+elseif k == "q" and attack == false and taunt.Value ~= "Krump" and taunt.Value ~= "Fave" and taunt.Value ~= "Sit" and taunt.Value ~= "Lost" then
+voidkill()
 elseif k == "]" then
 for i,v in pairs(lplr.PlayerGui:GetDescendants()) do
 if v:IsA("ScreenGui") or v:IsA("GuiMain") or v:IsA("ViewportFrame") or v:IsA("WorldModel") then
@@ -3184,6 +3186,8 @@ elseif k == "b" and attack == false then
 LightningBomb()
 elseif k == "n" and attack == false then
 GroundShards()
+elseif k == "k" and attack == false then
+attackonev2()
 elseif k == "e" and attack == false then
 if taunt.Value ~= "taunt2" then
 TauntRemote:Fire("taunt2",1841599995)
@@ -3239,7 +3243,7 @@ TauntRemote:Fire("Lost",9046526805)
 elseif k == "2" and attack == false and nomain == false and taunt.Value ~= "GOD" then
 TauntRemote:Fire("GOD",9039290292)
 elseif k == "3" and attack == false and nomain == false and taunt.Value ~= "Superior" then
-TauntRemote:Fire("Superior",97296738811384)
+TauntRemote:Fire("Superior",1841374480)
 elseif k == "4" and taunt.Value ~= "KickGod" then
 TauntRemote:Fire("KickGod",9041936082)
 elseif k == "5" and taunt.Value ~= "iNSaNiTY" and nomain == false then
@@ -3263,13 +3267,13 @@ TauntRemote:Fire("iNSaNiTY",1836812625)
 elseif k == "6" and nomain == false and taunt.Value ~= "Err0r" then
 TauntRemote:Fire("Err0r",1840963650)
 elseif k == "m" and nomain == false and taunt.Value == "Err0r" and taunt.Value ~= "Toxic" then
-TauntRemote:Fire("Toxic",1846668647)
+TauntRemote:Fire("Toxic",1840985823)
 elseif k == "7" and nomain == false and taunt.Value ~= "Glitch" then
 TauntRemote:Fire("Glitch",1837087520)
 elseif k == "8" and nomain == false and taunt.Value ~= "Fallen" then
 TauntRemote:Fire("Fallen",9047679043)
 elseif k == "9" and nomain == false and taunt.Value ~= "Berger" then
-TauntRemote:Fire("Berger",1841305698)
+TauntRemote:Fire("Berger",9045948785)
 elseif k == "0" and nomain == false and taunt.Value ~= "KingMan" then
 TauntRemote:Fire("KingMan",9040303465)
 elseif k == "u" and nomain == false then
@@ -3290,7 +3294,7 @@ walkspeed = 10
 end
 elseif k == "y" and nomain == false then
 if taunt.Value ~= "Krump" then
-TauntRemote:Fire("Krump",138618004586765)
+TauntRemote:Fire("Krump",9048324220)
 walkspeed = 16
 else
 TauntRemote:Fire("None",1841425036)
