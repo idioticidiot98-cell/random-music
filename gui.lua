@@ -1,3 +1,4 @@
+--why does it not have animations? i removed them because horizon lc would use the default r6 animations while reanimated go to line 35 to replace the number with any hat half of the hats dont work tho
 local Global = (getgenv and getgenv()) or shared
 if not isfile and isfolder and writefile and (getsynasset or getcustomasset) then
     warn("Exploit will not run custom songs")
