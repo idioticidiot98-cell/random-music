@@ -1,4 +1,4 @@
---All credits go to melonscripter for the fe convert btw press q to toggle look at camera and k to toggle torso view or humanoid
+--All credits go to melonscripter for the fe convert btw press q to toggle look at camera and k to toggle torso view or humanoid also press f9 to look at the controls
 local Global = (getgenv and getgenv()) or shared
 if game:GetService("Players").LocalPlayer.Character.Name ~= "GelatekReanimate" then
 	error("Not Reanimated")
