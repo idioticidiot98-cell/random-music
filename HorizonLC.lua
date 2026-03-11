@@ -3169,8 +3169,6 @@ elseif k == "c" and attack == false and taunt.Value ~= "Krump" and taunt.Value ~
 painlessrain()
 elseif k == "v" and attack == false and taunt.Value ~= "Krump" and taunt.Value ~= "Fave" and taunt.Value ~= "Sit" and taunt.Value ~= "Lost" then
 attacktwo()
-elseif k == "q" and attack == false and taunt.Value ~= "Krump" and taunt.Value ~= "Fave" and taunt.Value ~= "Sit" and taunt.Value ~= "Lost" then
-voidkill()
 elseif k == "]" then
 for i,v in pairs(lplr.PlayerGui:GetDescendants()) do
 if v:IsA("ScreenGui") or v:IsA("GuiMain") or v:IsA("ViewportFrame") or v:IsA("WorldModel") then
@@ -3186,8 +3184,6 @@ elseif k == "b" and attack == false then
 LightningBomb()
 elseif k == "n" and attack == false then
 GroundShards()
-elseif k == "k" and attack == false then
-attackonev2()
 elseif k == "e" and attack == false then
 if taunt.Value ~= "taunt2" then
 TauntRemote:Fire("taunt2",1841599995)
