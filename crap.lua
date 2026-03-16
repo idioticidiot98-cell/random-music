@@ -329,30 +329,7 @@ end
 -- Collide Fling
 if CollideFling == true then
 	if R15 == false then
-		local Torso = Character:FindFirstChild("Torso")
-		if PermanentDeath == true then
-			IGNORETORSOCHECK = "adfasdkogpasdfjopghsfdjofipsdjghsfopgjospadgjsaj"
-			task.spawn(function()
-				Wait(1)
-local Root = Character:WaitForChild("HumanoidRootPart")
-
-local BodyGyro = Instance.new("BodyGyro")
-BodyGyro.MaxTorque = Vector3.new(math.huge, math.huge, math.huge)
-BodyGyro.P = math.huge
-BodyGyro.Parent = Root
-
-game:GetService("RunService").PostSimulation:Connect(function()
-    BodyGyro.CFrame = Root.CFrame * CFrame.Angles(50,50,50)
-			end)
-		else
-			TorsoFlingEvent = PostSim:Connect(function()
-				if FigureHum.MoveDirection.Magnitude < 0.1 then
-					Torso.Velocity = Velocity
-				elseif FigureHum.MoveDirection.Magnitude > 0.1 then
-					Torso.Velocity = V3new(1250,1250,1250)+Velocity
-				end
-			end)
-		end
+print("gofuckyourself")
 	else
 		local Torso = Character:FindFirstChild("UpperTorso")
 		TorsoFlingEvent = PostSim:Connect(function()
