@@ -334,10 +334,16 @@ if CollideFling == true then
 			IGNORETORSOCHECK = "adfasdkogpasdfjopghsfdjofipsdjghsfopgjospadgjsaj"
 			task.spawn(function()
 				Wait(1)
+local Root = Character:WaitForChild("HumanoidRootPart")
+
+local Attachment = Instance.new("Attachment")
+Attachment.Parent = Root
+
 local AngularVelocity = Instance.new("AngularVelocity")
 AngularVelocity.Attachment0 = Attachment
 AngularVelocity.AngularVelocity = Vector3.new(1950,1950,1950)
 AngularVelocity.MaxTorque = math.huge
+AngularVelocity.RelativeTo = Enum.ActuatorRelativeTo.World
 AngularVelocity.Parent = Root
 			end)
 		else
