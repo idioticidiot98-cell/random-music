@@ -336,15 +336,13 @@ if CollideFling == true then
 				Wait(1)
 local Root = Character:WaitForChild("HumanoidRootPart")
 
-local Attachment = Instance.new("Attachment")
-Attachment.Parent = Root
+local BodyGyro = Instance.new("BodyGyro")
+BodyGyro.MaxTorque = Vector3.new(math.huge, math.huge, math.huge)
+BodyGyro.P = math.huge
+BodyGyro.Parent = Root
 
-local AngularVelocity = Instance.new("AngularVelocity")
-AngularVelocity.Attachment0 = Attachment
-AngularVelocity.AngularVelocity = Vector3.new(1950,1950,1950)
-AngularVelocity.MaxTorque = math.huge
-AngularVelocity.RelativeTo = Enum.ActuatorRelativeTo.World
-AngularVelocity.Parent = Root
+game:GetService("RunService").PostSimulation:Connect(function()
+    BodyGyro.CFrame = Root.CFrame * CFrame.Angles(50,50,50)
 			end)
 		else
 			TorsoFlingEvent = PostSim:Connect(function()
