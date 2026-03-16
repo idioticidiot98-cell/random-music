@@ -334,12 +334,11 @@ if CollideFling == true then
 			IGNORETORSOCHECK = "adfasdkogpasdfjopghsfdjofipsdjghsfopgjospadgjsaj"
 			task.spawn(function()
 				Wait(1)
-				local BodyAngularVelocity = INew("BodyAngularVelocity")
-				BodyAngularVelocity.MaxTorque = V3new(1,1,1) * Infinite
-				BodyAngularVelocity.P = math.huge
-				BodyAngularVelocity.AngularVelocity = V3new(1950,1950,1950)
-				BodyAngularVelocity.Name = "TorsoFlinger"
-				BodyAngularVelocity.Parent = Character:FindFirstChild("HumanoidRootPart")
+local AngularVelocity = Instance.new("AngularVelocity")
+AngularVelocity.Attachment0 = Attachment
+AngularVelocity.AngularVelocity = Vector3.new(1950,1950,1950)
+AngularVelocity.MaxTorque = math.huge
+AngularVelocity.Parent = Root
 			end)
 		else
 			TorsoFlingEvent = PostSim:Connect(function()
