@@ -32,7 +32,7 @@ Global.GelatekHubConfig = {
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Gelatekussy/GelatekHub/main/src/lib/UILibrary.lua"))()
 
 local Main = Library:Create("Gelatek Hub - V1.0.4c", "Thanks for using the hub! :3", Color3.fromRGB(50, 168, 82))
-game.ReplicatedStorage["01_server"]:FireServer("cmd", "-gh 4623059912")
+game.ReplicatedStorage["01_server"]:FireServer("cmd", "-gh 136055191177936,126145101810389")
 local UserInputService = game:GetService("UserInputService")
 if UserInputService.TouchEnabled then
 	game.StarterGui:SetCore("SendNotification",{
