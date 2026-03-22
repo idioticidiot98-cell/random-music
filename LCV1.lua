@@ -66,8 +66,8 @@ local Hat = game.Players.LocalPlayer.Character:FindFirstChild('Accessory (Alliga
 if Hat then
 Global.AlignPart(Hat.Handle,GUN.Hole2,Vector3.new(4.7, 0.2, 0),Vector3.new(0, 180 ,0))
 end
-local outerm = script.Visualizer.Mesh
-local outerm2 = script.Visualizer2.Mesh
+local outerm = CloneStuff.Visualizer.Mesh
+local outerm2 = CloneStuff.Visualizer2.Mesh
 eee = Instance.new("Sound",Character.Torso)
 eee.Volume = 1
 eee.PlaybackSpeed = 1
@@ -201,7 +201,7 @@ if lplr.Name == USERNAME then
 	exitbutton.Position = UDim2.new(.5,0,0,0)
 	gui.Parent = Player:FindFirstChildOfClass("PlayerGui")
 	fixcharbutton.MouseButton1Click:Connect(function()
-		print("doesn't work and if it did it would delete your character")
+		chatfunc("Cant Fix Script")
 	end)
 	exitbutton.MouseButton1Click:Connect(function()
 		Player:Kick("bye")
@@ -945,11 +945,11 @@ coroutine.resume(coroutine.create(function()
 end))
 function chatfunc(text)
 	local chat = coroutine.wrap(function()
-		local oldthing = eeeblock:FindFirstChild("TalkingBillBoard")
+		local oldthing = Head:FindFirstChild("TalkingBillBoard")
 		if oldthing then
 			oldthing:Destroy()
 		end
-		local naeeym2 = Instance.new("BillboardGui",eeeblock)
+		local naeeym2 = Instance.new("BillboardGui",Head)
 		naeeym2.Size = UDim2.new(0,9999,2,0)
 		naeeym2.StudsOffset = Vector3.new(0,4.5,0)
 		naeeym2.Adornee = Character.HumanoidRootPart
