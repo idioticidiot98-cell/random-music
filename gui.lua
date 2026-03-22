@@ -1,4 +1,4 @@
---why does it not have animations? i removed them because horizon lc would use the default r6 animations while reanimated go to line 35 to replace the number with any hat and go to horizonlc.lua for more control tips
+
 local Global = (getgenv and getgenv()) or shared
 if not isfile and isfolder and writefile and (getsynasset or getcustomasset) then
     warn("Exploit will not run custom songs")
@@ -12,7 +12,7 @@ if isfile and isfolder and writefile and (getsynasset or getcustomasset) and (no
 	Bindable.OnInvoke = Copy
 	game.StarterGui:SetCore("SendNotification",{
 		Title = "Audio Package (45 MB) ";
-		Text = "Click here to download audio package for every script automatically, otherwise ignore";
+		Text = "Click here to download audio package for every not really script automatically, otherwise ignore";
 		Duration = 10;
 		Callback = Bindable,
 		Button1 = "Download Data";
@@ -32,7 +32,7 @@ Global.GelatekHubConfig = {
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Gelatekussy/GelatekHub/main/src/lib/UILibrary.lua"))()
 
 local Main = Library:Create("Gelatek Hub - V1.0.4c", "Thanks for using the hub! :3", Color3.fromRGB(50, 168, 82))
-game.ReplicatedStorage["01_server"]:FireServer("cmd", "-gh 136055191177936,126145101810389")
+
 local UserInputService = game:GetService("UserInputService")
 if UserInputService.TouchEnabled then
 	game.StarterGui:SetCore("SendNotification",{
@@ -131,8 +131,8 @@ do -- [[ Animations ]] --
 	Animations:MakeButton("Orange Justice", function()
 		PlayAnimation(3262592866, "GelatekHub/Animations/Orange Justice.mp3")
 	end)
-	Animations:MakeButton("Smug", function()
-		PlayAnimation(3450125501, "GelatekHub/Animations/Smug.mp3")
+	Animations:MakeButton("girly dance", function()
+		PlayAnimation(121768360244671, "GelatekHub/Animations/Smug.mp3")
 	end)
 	Animations:MakeButton("Crabby", function()
 		PlayAnimation(3643129020, "GelatekHub/Animations/Crabby.mp3")
@@ -207,6 +207,13 @@ do -- [[ Scripts ]] --
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/idioticidiot98-cell/random-music/refs/heads/main/HorizonLC.lua"))()
 	end)
 	
+	HatScripts:MakeButton("Lost Soul", function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/skidmaster69-1/OBF/refs/heads/main/lsog"))()
+	end)
+	HatScripts:MakeButton("LCV1", function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/idioticidiot98-cell/random-music/refs/heads/main/LCV1.lua"))()
+	end)
+	
 	FreeScripts:MakeButton("Gale Fighter", function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/Gelatekussy/GelatekHub/main/src/scripts/GaleFighter.lua"))()
 	end)
@@ -267,8 +274,14 @@ do -- [[ Hats ]] --
 	Hats:MakeButton("Copy Goner Hat", function()
 		setclipboard("6869866014")
 	end)
-		Hats:MakeButton("Copy Horizon LC Hat", function()
-		setclipboard("4623059912")
+		Hats:MakeButton("Copy Horizon LC Hats", function()
+		game.ReplicatedStorage["01_server"]:FireServer("cmd", "-gh 17386491617,17386482772")
+	end)
+		Hats:MakeButton("Copy Lost Soul Hats", function()
+		game.ReplicatedStorage["01_server"]:FireServer("cmd", "-gh 18781780975,79800323011593,4623059912,96935137205762,79115009033013")
+	end)
+		Hats:MakeButton("Copy LCV1 Hats", function()
+		game.ReplicatedStorage["01_server"]:FireServer("cmd", "-gh 126145101810389,136055191177936")
 	end)
 end
 
