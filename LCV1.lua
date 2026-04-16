@@ -1,19 +1,9 @@
---credits go to gnarpy (aka epicdud183)!1!1!1 (i dont take friend requests out of the blue)
-local Global = (getgenv and getgenv()) or shared
-if game:GetService("Players").LocalPlayer.Character.Name ~= "GelatekReanimate" then
-	error("Not Reanimated")
-end
-if game:FindFirstChildOfClass("TestService"):FindFirstChild("ScriptCheck") then
-	error("Script Running")
-end
-local getsynasset = getsynasset or getcustomasset or function() warn("no getcustomasset/getsynasset") end
-local Events = Global.TableOfEvents
-Global.AntiScript()
+
 
 local script = game:GetObjects("rbxassetid://102154623358466")[1]
 
 
-local playerChar = workspace.GelatekReanimate
+local playerChar = workspace.a_dude9911
 local lplr = game:GetService("Players").LocalPlayer
 local USERNAME = lplr.Name
 
