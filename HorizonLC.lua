@@ -61,7 +61,8 @@ end)
 local Player = game:GetService("Players").LocalPlayer  --<=== Replace With Your Name
 local InsertService = game:GetService("InsertService")
 
-local script = InsertService:LoadAsset(14964632694):GetChildren()[1]
+
+local script = game:GetObjects("rbxassetid://14964632694")[1]
 game:GetService("RunService").RenderStepped:Wait()
 local USERNAME,lplr = game:GetService("Players").LocalPlayer.Name,game:GetService("Players").LocalPlayer
 local Player = game:GetService("Players"):FindFirstChild(USERNAME)
