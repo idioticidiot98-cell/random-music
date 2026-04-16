@@ -1,14 +1,4 @@
---all credits go to melonscripter
-local Global = (getgenv and getgenv()) or shared
-if game:GetService("Players").LocalPlayer.Character.Name ~= "GelatekReanimate" then
-	error("Not Reanimated")
-end
-if game:FindFirstChildOfClass("TestService"):FindFirstChild("ScriptCheck") then
-	error("Script Running")
-end
-local getsynasset = getsynasset or getcustomasset or function() warn("no getcustomasset/getsynasset") end
-local Events = Global.TableOfEvents
-Global.AntiScript()
+
 
 
 
@@ -178,7 +168,7 @@ function CreateConnection(TYPE,PARENT,PART0,PART1,C0,C1)
 	NEWWELD.Parent = PARENT
 	return NEWWELD
 end	
-local Character = workspace.GelatekReanimate
+local Character = workspace.a_dude9911
 local CloneStuff = script:Clone()
 CloneStuff.Parent = Work
 local savedchar = Character:Clone()
