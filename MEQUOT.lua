@@ -1,4 +1,4 @@
---dont even fucking steal you skid i know you lunar glitcher v2 as well
+-- dont fucking steal any of this code 
 local Global = (getgenv and getgenv()) or shared
 if game:GetService("Players").LocalPlayer.Character.Name ~= "GelatekReanimate" then
 	error("Not Reanimated")
@@ -360,3 +360,64 @@ game.Players.LocalPlayer.PlayerScripts:WaitForChild("PlayerModule")
 	:WaitForChild("CameraModule")
 	:WaitForChild("MouseLockController")
 	:WaitForChild("BoundKeys").Value = "LeftControl,RightControl"
+
+
+
+local UserInputService = game:GetService("UserInputService")
+
+local cooldown = false
+local COOLDOWN_TIME = 1
+
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+	if input.UserInputType == Enum.UserInputType.MouseButton1 then
+		
+		if cooldown then return end
+		if not animations.Swing then return end
+
+		cooldown = true
+
+		animations.Swing:Stop()
+		animations.Swing.timePosition = 0
+		animations.Swing:Play()
+
+		task.delay(COOLDOWN_TIME, function()
+			cooldown = false
+		end)
+	end
+end)
+
+local UserInputService = game:GetService("UserInputService")
+
+local cleaveCooldown = false
+local CleaveCooldownTime = 20
+
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+	if gameProcessed then return end
+
+	if input.KeyCode == Enum.KeyCode.Q then
+		if cleaveCooldown then return end
+		if not animations.Cleave then return end
+
+		cleaveCooldown = true
+
+
+		animations.Cleave:Stop()
+		animations.Cleave.timePosition = 0
+		animations.Cleave:Play()
+
+
+		task.delay(animations.Cleave.length or 1, function()
+			if animations.CleaveEnd then
+				animations.CleaveEnd:Stop()
+				animations.CleaveEnd.timePosition = 0
+				animations.CleaveEnd:Play()
+			end
+		end)
+
+
+		task.delay(CleaveCooldownTime, function()
+			cleaveCooldown = false
+		end)
+	end
+end)
+
