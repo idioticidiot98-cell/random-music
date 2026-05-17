@@ -206,6 +206,10 @@ do -- [[ Scripts ]] --
 	HatScripts:MakeButton("Horizon LC", function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/idioticidiot98-cell/random-music/refs/heads/main/HorizonLC.lua"))()
 	end)
+
+		HatScripts:MakeButton("Mequot", function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/idioticidiot98-cell/random-music/refs/heads/main/MEQUOT.lua"))()
+	end)
 	
 	HatScripts:MakeButton("Lost Soul", function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/skidmaster69-1/OBF/refs/heads/main/lsog"))()
