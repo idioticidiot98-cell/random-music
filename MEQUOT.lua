@@ -1,14 +1,3 @@
--- dont fucking steal any of this code 
-local Global = (getgenv and getgenv()) or shared
-if game:GetService("Players").LocalPlayer.Character.Name ~= "GelatekReanimate" then
-	error("Not Reanimated")
-end
-if game:FindFirstChildOfClass("TestService"):FindFirstChild("ScriptCheck") then
-	error("Script Running")
-end
-local getsynasset = getsynasset or getcustomasset or function() warn("no getcustomasset/getsynasset") end
-local Events = Global.TableOfEvents
-Global.AntiScript()
 
 local InsertService = game:GetService("InsertService")
 
