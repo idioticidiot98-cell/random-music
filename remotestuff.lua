@@ -1,5 +1,5 @@
 --from mlcv6 because it ran out of local registers and no im not giving mlcv6 because its not even finished
-script=game:GetObjects("rbxassetid://71689513740838")[1]
+script=game:GetObjects("rbxassetid://102732578273511")[1]
 local Player = game:GetService("Players").LocalPlayer
 if Player ~= nil then else pcall(function() game:GetService("Debris"):AddItem(script,0);script.Enabled = false end) return end
 local Backpack = Player.Backpack
