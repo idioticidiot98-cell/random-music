@@ -39,11 +39,6 @@ local Humanoid = Character:FindFirstChild("Humanoid")
 local Torso,Head,RightArm,LeftArm,RightLeg,LeftLeg = Character.Torso,Character.Head,Character["Right Arm"],Character["Left Arm"],Character["Right Leg"],Character["Left Leg"]
 local SkinType = 1
 local Hats = {}
-for i,v in pairs(Character:GetDescendants()) do
-	if v:IsA("BasePart") then
-		v.Anchored = true
-	end
-end
 local Attachments = {
 	Torso = {
 		"RightCollarAttachment",
