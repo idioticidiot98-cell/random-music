@@ -137,18 +137,6 @@ function bart(Variable,PARENT,NAME)
 end
 
 function FIX()
-	if MainFolder.Parent~=nil then
-		bart(MainFolder,systemParent,FolderName)
-		bart(Remote,MainFolder,RemoteName)
-		bart(ServerValue,MainFolder,ServerValueName)
-		bart(MainPositionValue,MainFolder,MainPositionValueName)
-		bart(MouseHitValue,MainFolder,MouseHitValueName)
-		bart(MoveValue,MainFolder,AnimValueName)
-		bart(MusicValue,MainFolder,MusicValueName)
-		bart(VolumeValue,MainFolder,VolumeValueName)
-		bart(ModeValue,MainFolder,ModeValueName)
-		bart(SteppedValue,MainFolder,SteppedValueName)
-	end
 end
 
 
