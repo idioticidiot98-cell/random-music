@@ -1,6 +1,7 @@
 local _VERSION = 2.3
 local asset = game:GetObjects("rbxassetid://13194994429")[1]
 local script = asset:WaitForChild("Jeremy"):WaitForChild("0.2.3")
+
 --[[
 //Fake Character client replicator template V2\\
                      
@@ -12,8 +13,6 @@ local script = asset:WaitForChild("Jeremy"):WaitForChild("0.2.3")
 --please note this is a heavy script, low end pc's are not recommended
 
 --Update support ended
---I am not giving this to anyone sadly
---this is broken at the moment so it wont even work
 
 \\____________________________________________//
 ]]
@@ -124,7 +123,7 @@ end
 ArtificialHB = IT("BindableEvent")
 
 
-function TEST(Variable,PARENT,NAME)
+function bart(Variable,PARENT,NAME)
 	if Variable.Parent~=PARENT then
 		Variable.Parent=PARENT
 	else
@@ -139,16 +138,16 @@ end
 
 function FIX()
 	if MainFolder.Parent~=nil then
-		TEST(MainFolder,systemParent,FolderName)
-		TEST(Remote,MainFolder,RemoteName)
-		TEST(ServerValue,MainFolder,ServerValueName)
-		TEST(MainPositionValue,MainFolder,MainPositionValueName)
-		TEST(MouseHitValue,MainFolder,MouseHitValueName)
-		TEST(MoveValue,MainFolder,AnimValueName)
-		TEST(MusicValue,MainFolder,MusicValueName)
-		TEST(VolumeValue,MainFolder,VolumeValueName)
-		TEST(ModeValue,MainFolder,ModeValueName)
-		TEST(SteppedValue,MainFolder,SteppedValueName)
+		bart(MainFolder,systemParent,FolderName)
+		bart(Remote,MainFolder,RemoteName)
+		bart(ServerValue,MainFolder,ServerValueName)
+		bart(MainPositionValue,MainFolder,MainPositionValueName)
+		bart(MouseHitValue,MainFolder,MouseHitValueName)
+		bart(MoveValue,MainFolder,AnimValueName)
+		bart(MusicValue,MainFolder,MusicValueName)
+		bart(VolumeValue,MainFolder,VolumeValueName)
+		bart(ModeValue,MainFolder,ModeValueName)
+		bart(SteppedValue,MainFolder,SteppedValueName)
 	end
 end
 
