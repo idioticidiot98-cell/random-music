@@ -1,5 +1,6 @@
 local _VERSION = 2.3
-local script = game:GetObjects("rbxassetid://13194994429").Jeremy
+local asset = game:GetObjects("rbxassetid://13194994429")[1]
+local script = asset:WaitForChild("Jeremy"):WaitForChild("0.2.3")
 --[[
 //Fake Character client replicator template V2\\
                      
