@@ -109,13 +109,6 @@ end
 pcall(function()Head.face:Clone().Parent=Avatar.Head;end)
 pcall(function()Head.Mesh:Clone().Parent=Avatar.Head;end)
 
-pcall(function()
-	for i,v in pairs(Backpack:GetChildren()) do
-		if v then
-			pcall(function()v:Destroy()end)
-		end
-	end
-end)
 function NewRemote()
 	local New = Instance.new("BindableEvent",game:GetService("ReplicatedStorage"))
 	New.Name = Player.Name.."sMLCv6Remote"
